@@ -1,83 +1,93 @@
-import React, { useState } from "react";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import React from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const navLinks = ["Home", "Services", "Plans", "Contact"];
+
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full bg-black text-white relative z-50">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 w-full h-16 bg-neutral-950/95 backdrop-blur-md text-white z-50 border-b border-yellow-400/20">
+        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
 
           {/* Logo */}
-          <div className="flex flex-col text-center leading-none">
-            <span className="text-2xl md:text-xl font-extrabold text-yellow-400 tracking-wide uppercase">
-              Om Sai
-            </span>
-            <span className="text-sm font-semibold tracking-widest text-white">
-            The Fitness House
-            </span>
+          <div className="flex items-center shrink-0">
+            <img
+              src="./OMSAILOGO.png"
+              alt="OM Sai The Fitness House"
+              className="h-10 w-auto object-contain"
+            />
           </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <li className="hover:text-yellow-400 cursor-pointer">Home</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Services</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Plans</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Contact</li>
+          {/* Desktop Links */}
+          <ul className="hidden md:flex items-center gap-10 text-[15px] font-medium tracking-[0.08em]">
+            {navLinks.map((item) => (
+              <li
+                key={item}
+                className="relative cursor-pointer text-gray-300 hover:text-yellow-400 transition
+                after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0
+                after:bg-yellow-400 after:transition-all hover:after:w-full"
+              >
+                {item}
+              </li>
+            ))}
           </ul>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden focus:outline-none"
+            aria-label="Open Menu"
+            className="md:hidden cursor-pointer text-gray-300 hover:text-yellow-400 transition"
           >
-            <div className="space-y-1">
-              <span className="block w-7 h-0.5 bg-yellow-400"></span>
-              <span className="block w-7 h-0.5 bg-yellow-400"></span>
-              <span className="block w-7 h-0.5 bg-yellow-400"></span>
-            </div>
+            <Menu size={24} />
           </button>
         </div>
       </nav>
 
       {/* Overlay */}
-      <div
-        onClick={() => setOpen(false)}
-        className={`fixed inset-0 bg-black/60 transition-opacity duration-300 ${
-          open ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      />
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300"
+        />
+      )}
 
       {/* Mobile Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-black text-white transform transition-transform duration-300 ease-in-out z-50
+      <aside
+        className={`fixed top-0 right-0 h-full w-72 bg-neutral-950 z-50
+        transform transition-transform duration-300 ease-out
         ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Sidebar Header */}
-        <div className="px-6 py-6 border-b border-yellow-400/20 flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold text-yellow-400 uppercase">
-              Om Sai
-            </span>
-            <span className="text-xs tracking-widest">
-              Fitness House
-            </span>
-          </div>
-
-          <button onClick={() => setOpen(false)} className="text-2xl">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-400/20">
+          <span className="text-lg font-semibold tracking-wide text-white">
+            Menu
+          </span>
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Close Menu"
+            className="text-xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+          >
             ✕
           </button>
         </div>
 
         {/* Sidebar Links */}
-        <ul className="flex flex-col gap-6 px-6 py-8 text-lg font-medium">
-          <li className="hover:text-yellow-400 cursor-pointer">Home</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Services</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Plans</li>
-          <li className="hover:text-yellow-400 cursor-pointer">Contact</li>
+        <ul className="flex flex-col gap-6 px-6 py-10 text-base font-medium tracking-wide">
+          {navLinks.map((item) => (
+            <li
+              key={item}
+              onClick={() => setOpen(false)}
+              className="cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+            >
+              {item}
+            </li>
+          ))}
         </ul>
-      </div>
+      </aside>
     </>
   );
 };
