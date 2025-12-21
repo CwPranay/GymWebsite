@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const programs = [
   {
@@ -29,6 +29,40 @@ const programs = [
 ];
 
 const ProgramsPreview = () => {
+  const scrollRef = useRef(null);
+  const directionRef = useRef(1);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const scrollStep = () => {
+      const maxScroll =
+        container.scrollWidth - container.clientWidth;
+
+      if (maxScroll <= 0) return;
+
+      const target =
+        directionRef.current === 1 ? maxScroll : 0;
+
+      container.scrollTo({
+        left: target,
+        behavior: "smooth",
+      });
+
+      // flip direction for next step
+      directionRef.current *= -1;
+
+      timeoutRef.current = setTimeout(scrollStep, 4500);
+    };
+
+    // start AFTER page renders
+    timeoutRef.current = setTimeout(scrollStep, 3000);
+
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
   return (
     <section className="bg-neutral-950 text-white py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -42,46 +76,40 @@ const ProgramsPreview = () => {
             Programs Designed to Fit Every Goal
           </h2>
           <p className="text-gray-400 mt-4">
-            Scroll through our training programs and facilities built for real results.
+            Scroll through our training programs and facilities.
           </p>
         </div>
 
-        {/* Horizontal Scroll */}
-        <div className="relative ">
-          <div
-            className="
-              flex gap-6 overflow-x-auto pb-6
-              snap-x snap-mandatory
-              hide-scrollbar
-            "
-          >
-            {programs.map((program, index) => (
-              <div
-                key={index}
-                className="
-                  min-w-[280px] sm:min-w-[340px] lg:min-w-[380px]
-                  snap-start
-                  border border-white/10 rounded-2xl
-                  p-8
-                  hover:border-red-500/40 transition
-                  bg-neutral-950
-                "
+        {/* Step Scroll Container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar"
+        >
+          {programs.map((program, index) => (
+            <div
+              key={index}
+              className="
+                min-w-[380px]
+                border border-white/10 rounded-2xl
+                p-8
+                bg-neutral-950
+                hover:border-red-500/40 transition
+              "
+            >
+              <h3 className="text-xl font-semibold mb-3">
+                {program.title}
+              </h3>
+              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                {program.desc}
+              </p>
+              <a
+                href={program.link}
+                className="text-sm font-semibold text-red-500 hover:text-red-400"
               >
-                <h3 className="text-xl font-semibold mb-3">
-                  {program.title}
-                </h3>
-                <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                  {program.desc}
-                </p>
-                <a
-                  href={program.link}
-                  className="text-sm font-semibold text-red-500 hover:text-red-400"
-                >
-                  View Details →
-                </a>
-              </div>
-            ))}
-          </div>
+                View Details →
+              </a>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
