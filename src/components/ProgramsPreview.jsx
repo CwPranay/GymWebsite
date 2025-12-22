@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const programs = [
   {
@@ -29,11 +29,34 @@ const programs = [
 ];
 
 const ProgramsPreview = () => {
+  const sectionRef = useRef(null);
   const scrollRef = useRef(null);
   const directionRef = useRef(1);
   const timeoutRef = useRef(null);
 
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  /* 🔥 Lazy-load background */
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBgLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  /* 🔁 Auto scroll (DESKTOP ONLY) */
+  useEffect(() => {
+    // 🚫 Disable auto-scroll on mobile
+    if (window.innerWidth < 768) return;
+
     const container = scrollRef.current;
     if (!container) return;
 
@@ -42,7 +65,6 @@ const ProgramsPreview = () => {
       if (maxScroll <= 0) return;
 
       const target = directionRef.current === 1 ? maxScroll : 0;
-
       container.scrollTo({ left: target, behavior: "smooth" });
       directionRef.current *= -1;
 
@@ -55,11 +77,12 @@ const ProgramsPreview = () => {
 
   return (
     <section
+      ref={sectionRef}
       className="relative text-white py-28 bg-cover bg-center"
-      style={{ backgroundImage: "url('/bg1.webp')" }}
+      style={bgLoaded ? { backgroundImage: "url('/bg1.webp')" } : {}}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      {bgLoaded && <div className="absolute inset-0 bg-black/70" />}
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6">
@@ -88,7 +111,7 @@ const ProgramsPreview = () => {
               className="
                 min-w-[380px]
                 rounded-2xl p-8
-                bg-black/70 backdrop-blur-md
+                bg-black/70 backdrop-blur-sm
                 border border-white/15
                 hover:border-red-500/50 transition
               "

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
@@ -16,31 +16,55 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const sectionRef = useRef(null);
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  /* 🔥 Lazy-load background */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBgLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="relative text-white py-28 bg-cover bg-center"
-      style={{ backgroundImage: "url('/bg2.webp')" }}
+      style={bgLoaded ? { backgroundImage: "url('/bg2.webp')" } : {}}
     >
       {/* Base dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {bgLoaded && <div className="absolute inset-0 bg-black/60" />}
 
       {/* Radial vignette (edges) */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,0.9) 100%)",
-        }}
-      />
+      {bgLoaded && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,0.9) 100%)",
+          }}
+        />
+      )}
 
       {/* Top vignette fade */}
-      <div
-        className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0))",
-        }}
-      />
+      {bgLoaded && (
+        <div
+          className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0))",
+          }}
+        />
+      )}
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6">
@@ -65,7 +89,7 @@ const TestimonialsSection = () => {
               key={index}
               className="
                 rounded-2xl p-8
-                bg-black/70 backdrop-blur-md
+                bg-black/70 backdrop-blur-sm
                 border border-white/15
               "
             >
