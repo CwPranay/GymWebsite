@@ -7,6 +7,7 @@ import AboutSection from './components/About'
 import WhyChooseUs from './components/WhyChooseUs'
 import ProgramsPreview from './components/ProgramsPreview'
 import TrainersSection from './components/PersonalTraining'
+import PlansSection from './components/PlansSection'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <WhyChooseUs/>
     <ProgramsPreview/>
     <TrainersSection/>
+    <PlansSection/>
 
     </>
   )
