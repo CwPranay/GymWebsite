@@ -46,7 +46,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <img
-            src="./OMSAILOGO.png"
+            src="./OMSAILOGO.webp"
             alt="OM Sai The Fitness House"
             className="h-10 w-auto object-contain"
           />

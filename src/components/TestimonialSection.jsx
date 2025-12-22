@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
   return (
     <section
       className="relative text-white py-28 bg-cover bg-center"
-      style={{ backgroundImage: "url('/bg2.png')" }}
+      style={{ backgroundImage: "url('/bg2.webp')" }}
     >
       {/* Base dark overlay */}
       <div className="absolute inset-0 bg-black/60" />

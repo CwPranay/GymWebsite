@@ -48,7 +48,7 @@ const AboutSection = () => {
           {/* Image bleed */}
           <div className="relative h-[420px] md:h-[480px] w-full">
             <img
-              src="./omsaiEquipment.jpg"
+              src="./omsaiEquipment.webp"
               alt="Training equipment at OM Sai Fitness House"
               className="absolute inset-0 h-full w-full object-cover"
             />

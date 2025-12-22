@@ -56,7 +56,7 @@ const ProgramsPreview = () => {
   return (
     <section
       className="relative text-white py-28 bg-cover bg-center"
-      style={{ backgroundImage: "url('/bg1.png')" }}
+      style={{ backgroundImage: "url('/bg1.webp')" }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/70" />

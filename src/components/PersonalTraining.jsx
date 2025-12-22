@@ -42,7 +42,7 @@ const PersonalTraining = () => {
         <div className="relative flex justify-center md:justify-end">
           <div className="max-w-md transform scale-90">
             <img
-              src="/PT.png"
+              src="/PT.webp"
               alt="Personal training session"
               className="w-full object-contain rounded-2xl shadow-xl"
             />
