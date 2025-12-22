@@ -38,49 +38,46 @@ const ProgramsPreview = () => {
     if (!container) return;
 
     const scrollStep = () => {
-      const maxScroll =
-        container.scrollWidth - container.clientWidth;
-
+      const maxScroll = container.scrollWidth - container.clientWidth;
       if (maxScroll <= 0) return;
 
-      const target =
-        directionRef.current === 1 ? maxScroll : 0;
+      const target = directionRef.current === 1 ? maxScroll : 0;
 
-      container.scrollTo({
-        left: target,
-        behavior: "smooth",
-      });
-
-      // flip direction for next step
+      container.scrollTo({ left: target, behavior: "smooth" });
       directionRef.current *= -1;
 
       timeoutRef.current = setTimeout(scrollStep, 4500);
     };
 
-    // start AFTER page renders
     timeoutRef.current = setTimeout(scrollStep, 3000);
-
     return () => clearTimeout(timeoutRef.current);
   }, []);
 
   return (
-    <section className="bg-neutral-950 text-white py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      className="relative text-white py-28 bg-cover bg-center"
+      style={{ backgroundImage: "url('/bg1.png')" }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70" />
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-14 max-w-2xl">
           <p className="text-red-500 tracking-widest text-sm mb-3">
             OUR OFFERINGS
           </p>
           <h2 className="text-3xl md:text-4xl font-bold">
             Programs Designed to Fit Every Goal
           </h2>
-          <p className="text-gray-400 mt-4">
-            Scroll through our training programs and facilities.
+          <p className="text-gray-300 mt-4">
+            Explore our training programs and facilities inside our gym.
           </p>
         </div>
 
-        {/* Step Scroll Container */}
+        {/* Scroll Container */}
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar"
@@ -90,21 +87,21 @@ const ProgramsPreview = () => {
               key={index}
               className="
                 min-w-[380px]
-                border border-white/10 rounded-2xl
-                p-8
-                bg-neutral-950
-                hover:border-red-500/40 transition
+                rounded-2xl p-8
+                bg-black/70 backdrop-blur-md
+                border border-white/15
+                hover:border-red-500/50 transition
               "
             >
               <h3 className="text-xl font-semibold mb-3">
                 {program.title}
               </h3>
-              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+              <p className="text-gray-300 mb-6 text-sm leading-relaxed">
                 {program.desc}
               </p>
               <a
                 href={program.link}
-                className="text-sm font-semibold text-red-500 hover:text-red-400"
+                className="text-sm font-semibold text-red-400 hover:text-red-300"
               >
                 View Details →
               </a>
@@ -113,10 +110,10 @@ const ProgramsPreview = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-10">
+        <div className="mt-12">
           <a
             href="/programs"
-            className="inline-block text-sm font-semibold text-white border border-white/20 px-6 py-3 rounded-full hover:border-red-500 transition"
+            className="inline-block text-sm font-semibold text-white border border-white/30 px-6 py-3 rounded-full hover:border-red-500 transition"
           >
             Explore All Programs
           </a>
