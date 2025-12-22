@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
   const sectionRef = useRef(null);
   const [bgLoaded, setBgLoaded] = useState(false);
 
-  /* 🔥 Lazy-load background */
+  /* Lazy-load trigger */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,33 +38,37 @@ const TestimonialsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative text-white py-28 bg-cover bg-center"
-      style={bgLoaded ? { backgroundImage: "url('/bg2.webp')" } : {}}
+      className="relative text-white py-28 overflow-hidden bg-neutral-950"
     >
-      {/* Base dark overlay */}
-      {bgLoaded && <div className="absolute inset-0 bg-black/60" />}
+      {/* Background image layer (fade-in) */}
+      <div
+        className={`
+          absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-out
+          ${bgLoaded ? "opacity-100" : "opacity-0"}
+        `}
+        style={{ backgroundImage: "url('/bg2.webp')" }}
+      />
 
-      {/* Radial vignette (edges) */}
-      {bgLoaded && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,0.9) 100%)",
-          }}
-        />
-      )}
+      {/* Base dark overlay (always present) */}
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* Top vignette fade */}
-      {bgLoaded && (
-        <div
-          className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0))",
-          }}
-        />
-      )}
+      {/* Radial vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,0.9) 100%)",
+        }}
+      />
+
+      {/* Top vignette */}
+      <div
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0))",
+        }}
+      />
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6">

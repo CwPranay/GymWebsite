@@ -36,7 +36,7 @@ const ProgramsPreview = () => {
 
   const [bgLoaded, setBgLoaded] = useState(false);
 
-  /* 🔥 Lazy-load background */
+  /* 🔥 Lazy-load background trigger */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -54,7 +54,6 @@ const ProgramsPreview = () => {
 
   /* 🔁 Auto scroll (DESKTOP ONLY) */
   useEffect(() => {
-    // 🚫 Disable auto-scroll on mobile
     if (window.innerWidth < 768) return;
 
     const container = scrollRef.current;
@@ -78,11 +77,19 @@ const ProgramsPreview = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative text-white py-28 bg-cover bg-center"
-      style={bgLoaded ? { backgroundImage: "url('/bg1.webp')" } : {}}
+      className="relative text-white py-28 overflow-hidden bg-neutral-950"
     >
-      {/* Dark Overlay */}
-      {bgLoaded && <div className="absolute inset-0 bg-black/70" />}
+      {/* Background image layer (fade-in) */}
+      <div
+        className={`
+          absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-out
+          ${bgLoaded ? "opacity-100" : "opacity-0"}
+        `}
+        style={{ backgroundImage: "url('/bg1.webp')" }}
+      />
+
+      {/* Dark overlay (always present) */}
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6">
