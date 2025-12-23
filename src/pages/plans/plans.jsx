@@ -1,3 +1,4 @@
+import React from "react";
 import PlansHero from "./PlansHero";
 import MembershipPlans from "./MembershipPlans";
 import PlansIncludes from "./PlansIncludes";

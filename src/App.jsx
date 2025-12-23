@@ -1,35 +1,24 @@
-import './App.css'
-import React from 'react'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import AboutSection from './components/About'
-import WhyChooseUs from './components/WhyChooseUs'
-import ProgramsPreview from './components/ProgramsPreview'
-import TrainersSection from './components/PersonalTraining'
-import PlansSection from './components/PlansSection'
-import TestimonialsSection from './components/TestimonialSection'
-import FinalCTASection from './components/FinalCTASection'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Plans from "./pages/plans/plans";
+
 
 function App() {
-
-
   return (
     <>
-    <Navbar/>
-    <HeroSection/>
-    <AboutSection/>
-    <WhyChooseUs/>
-    <ProgramsPreview/>
-    <TrainersSection/>
-    <PlansSection/>
-    <TestimonialsSection/>
-    <FinalCTASection/>
-    <Footer/>
+      <Navbar />
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/plans" element={<Plans />} />
+        
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
