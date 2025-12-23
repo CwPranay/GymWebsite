@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
+
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Plans", path: "/plans" },
+  { label: "Services", path: "/services" },
+  { label: "Contact", path: "/contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [atTop, setAtTop] = useState(true);
-
-  const navLinks = ["Home", "Services", "Plans", "Contact"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +22,8 @@ const Navbar = () => {
       setAtTop(currentY < 40);
 
       if (currentY > lastScrollY && currentY > 80) {
-        // scrolling down
         setVisible(false);
       } else {
-        // scrolling up
         setVisible(true);
       }
 
@@ -37,33 +41,41 @@ const Navbar = () => {
         className={`fixed top-0 left-0 w-full h-20 z-50
         transition-all duration-300 ease-out
         ${visible ? "translate-y-0" : "-translate-y-full"}
-        ${atTop
-          ? "bg-neutral-950"
-          : "bg-neutral-950 backdrop-blur-md"}
+        ${atTop ? "bg-neutral-950" : "bg-neutral-950 backdrop-blur-md"}
         `}
       >
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
 
           {/* Logo */}
-          <img
-            src="./OMSAILOGO.webp"
-            alt="OM Sai The Fitness House"
-            className="h-10 w-auto object-contain"
-          />
+          <Link to="/">
+            <img
+              src="/OMSAILOGO.webp"
+              alt="OM Sai The Fitness House"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-gray-200">
+          <ul className="hidden md:flex items-center gap-10 text-sm font-medium">
             {navLinks.map((item) => (
-              <li
-                key={item}
-                className="cursor-pointer hover:text-[#B11226] transition"
-              >
-                {item}
+              <li key={item.path}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `transition ${
+                      isActive
+                        ? "text-[#B11226]"
+                        : "text-gray-200 hover:text-[#B11226]"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
               </li>
             ))}
           </ul>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(true)}
             className="md:hidden text-gray-200 hover:text-[#B11226] transition"
@@ -99,15 +111,23 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Links */}
+        {/* Mobile Links */}
         <ul className="mt-10 flex flex-col gap-6 px-6 text-lg font-medium">
           {navLinks.map((item) => (
-            <li
-              key={item}
-              onClick={() => setOpen(false)}
-              className="cursor-pointer text-gray-200 hover:text-[#B11226] transition"
-            >
-              {item}
+            <li key={item.path}>
+              <NavLink
+                to={item.path}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `block transition ${
+                    isActive
+                      ? "text-[#B11226]"
+                      : "text-gray-200 hover:text-[#B11226]"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
             </li>
           ))}
         </ul>
