@@ -12,7 +12,7 @@ const PTFor = () => {
   return (
     <section className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-12">
+        <h2 className="text-3xl font-heading italic mb-12">
           Personal Training Is Best For
         </h2>
 

@@ -3,11 +3,11 @@ import { Menu } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Plans", path: "/plans" },
-  { label: "Services", path: "/services" },
-   {label:"Personal Training" ,path:"/personalTraining"},
-  { label: "Contact", path: "/contact" },
+  { label: "HOME", path: "/" },
+  { label: "PLANS", path: "/plans" },
+  { label: "SERVICES", path: "/services" },
+   {label:"PERSONAL TRAINING" ,path:"/personalTraining"},
+  { label: "CONTACT", path: "/contact" },
  
 ];
 

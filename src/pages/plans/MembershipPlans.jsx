@@ -37,7 +37,7 @@ const MembershipPlans = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading italic mb-4">
             Membership Options
           </h2>
           <p className="text-neutral-600">
@@ -56,7 +56,7 @@ const MembershipPlans = () => {
                   : "border-neutral-200"}
               `}
             >
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl font-heading italic mb-4">
                 {plan.title}
               </h3>
 

@@ -4,7 +4,7 @@ const PTCTA = () => {
   return (
     <section className="bg-red-600 text-white py-24">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+        <h2 className="text-3xl md:text-4xl font-heading italic mb-6">
           Serious About Results?
         </h2>
         <p className="text-white/90 mb-10">

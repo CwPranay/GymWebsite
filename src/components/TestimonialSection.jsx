@@ -78,7 +78,7 @@ const TestimonialsSection = () => {
           <p className="tracking-widest text-sm text-red-500 mb-3">
             MEMBER FEEDBACK
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading italic mb-4">
             What Our Members Say
           </h2>
           <p className="text-gray-300">

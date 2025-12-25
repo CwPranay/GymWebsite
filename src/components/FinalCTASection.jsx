@@ -6,7 +6,7 @@ const FinalCTASection = () => {
       <div className="max-w-5xl mx-auto px-6">
 
         <div className="bg-red-600 text-white text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-5 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-heading italic mb-5 leading-tight">
             Take the First Step Towards a Fitter You
           </h2>
 

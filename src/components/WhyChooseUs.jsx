@@ -1,10 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const WhyChooseUs = () => {
   return (
     <section className="bg-neutral-50 text-neutral-900 py-28">
-      <motion.div
+      <Motion.div
         className="max-w-7xl mx-auto px-6"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -17,10 +17,10 @@ const WhyChooseUs = () => {
             WHY CHOOSE US
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-heading italic leading-tight">
             Built for Consistency, <br />
             Not Quick Motivation.
-          </h2>
+          </h1>
         </div>
 
         {/* Reasons */}
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
             <span className="text-[color:#B11226] text-sm font-medium">
               01
             </span>
-            <h3 className="mt-4 text-xl font-semibold">
+            <h3 className="mt-4 font-heading italic text-xl font-medium">
               Serious Training Environment
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
             <span className="text-[color:#B11226] text-sm font-medium">
               02
             </span>
-            <h3 className="mt-4 text-xl font-semibold">
+            <h3 className="mt-4 font-heading italic text-xl font-medium">
               Guidance That Prioritizes Form
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
             <span className="text-[color:#B11226] text-sm font-medium">
               03
             </span>
-            <h3 className="mt-4 text-xl font-semibold">
+            <h3 className="mt-4 font-heading italic text-xl font-medium">
               Suitable for All Levels
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
             </p>
           </div>
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   );
 };

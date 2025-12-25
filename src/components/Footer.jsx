@@ -10,7 +10,7 @@ const Footer = () => {
 
           {/* Gym Info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">
+            <h3 className="text-xl font-heading italic text-white mb-4">
               OM Sai Fitness House
             </h3>
             <p className="text-sm leading-relaxed max-w-sm">
@@ -21,7 +21,7 @@ const Footer = () => {
 
           {/* Address & Timings */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4 tracking-wide">
+            <h4 className="text-sm font-heading italic text-white mb-4 tracking-wide">
               VISIT US
             </h4>
             <p className="text-sm leading-relaxed mb-4">
@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4 tracking-wide">
+            <h4 className="text-sm font-heading italic text-white mb-4 tracking-wide">
               CONTACT
             </h4>
 

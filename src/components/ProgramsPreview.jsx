@@ -95,12 +95,13 @@ const ProgramsPreview = () => {
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-14 max-w-3xl">
           <p className="text-red-500 tracking-widest text-sm mb-3">
             OUR OFFERINGS
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Programs Designed to Fit Every Goal
+          <h2 className="text-4xl md:text-5xl font-heading italic ">
+            Programs Designed to 
+             Fit Every Goal
           </h2>
           <p className="text-gray-300 mt-4">
             Explore our training programs and facilities inside our gym.

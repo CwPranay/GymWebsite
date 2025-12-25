@@ -1,10 +1,35 @@
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "Anton", sans-serif;
+  --font-body: "Open Sans", system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+
+body {
+  font-family: var(--font-body);
+}
+
+
+
 /* Hide scrollbar but keep scroll functionality */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
+
+
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE & Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE & Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

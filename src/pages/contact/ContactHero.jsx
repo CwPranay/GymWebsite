@@ -7,7 +7,7 @@ const ContactHero = () => {
         <p className="tracking-widest text-sm text-red-500 mb-4">
           CONTACT US
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
+        <h1 className="text-4xl md:text-5xl font-heading italic mb-6">
           Visit the Gym. Start Your Journey.
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto">

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -14,7 +14,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20" />
 
       {/* Content */}
-      <motion.div
+      <Motion.div
         className="relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex items-center"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,10 +27,12 @@ const HeroSection = () => {
           </p>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-5xl font-heading italic tracking-wide leading-tight text-white">
             Build Strength. <br />
             Build Discipline.
           </h1>
+
+
 
           {/* Subtext */}
           <p className="mt-6 text-gray-300 text-base leading-relaxed">
@@ -56,14 +58,14 @@ const HeroSection = () => {
                   .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="border border-white/40 text-white px-6 py-3 font-semibold rounded-md
+              className="border  border-white/40 text-white px-6 py-3 font-semibold rounded-md
                          hover:bg-white/10 transition"
             >
               Visit the Gym
             </button>
           </div>
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   );
 };

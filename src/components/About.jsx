@@ -1,10 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
     <section className="bg-white text-neutral-900 py-28 overflow-hidden">
-      <motion.div
+      <Motion.div
         className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -17,10 +17,10 @@ const AboutSection = () => {
             ABOUT US
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-heading italic leading-tight">
             More Than a Gym. <br />
             A Place to Train with Purpose.
-          </h2>
+          </h1>
 
           <p className="mt-6 text-gray-700 leading-relaxed max-w-xl">
             OM Sai – The Fitness House is built for people who are serious about
@@ -57,7 +57,7 @@ const AboutSection = () => {
           {/* Subtle accent line */}
           <div className="absolute -bottom-8 left-0 h-[2px] w-24 bg-[#B11226]" />
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   );
 };

@@ -12,7 +12,7 @@ const PTBenefits = () => {
   return (
     <section className="bg-white text-neutral-900 py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-14">
+        <h2 className="text-3xl font-heading italic text-center mb-14">
           Why Choose Personal Training?
         </h2>
 

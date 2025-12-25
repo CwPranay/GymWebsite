@@ -34,7 +34,7 @@ const ServicesList = () => {
               key={index}
               className="border border-neutral-200 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold mb-4 text-red-600">
+              <h3 className="text-2xl font-heading italic mb-4 text-red-600">
                 {service.title}
               </h3>
               <p className="text-neutral-700 leading-relaxed">

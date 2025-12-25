@@ -8,7 +8,7 @@ const ContactDetails = () => {
         <div className="grid md:grid-cols-3 gap-10 text-center">
 
           <div className="border rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-3">Call Us</h3>
+            <h3 className="text-xl font-heading italic mb-3">Call Us</h3>
             <p className="text-neutral-600 mb-4">
               Talk directly with our team
             </p>
@@ -21,7 +21,7 @@ const ContactDetails = () => {
           </div>
 
           <div className="border rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-3">WhatsApp</h3>
+            <h3 className="text-xl font-heading italic mb-3">WhatsApp</h3>
             <p className="text-neutral-600 mb-4">
               Quick queries & timings
             </p>
@@ -34,7 +34,7 @@ const ContactDetails = () => {
           </div>
 
           <div className="border rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-3">Working Hours</h3>
+            <h3 className="text-xl font-heading italic mb-3">Working Hours</h3>
             <p className="text-neutral-600">
               Mon – Sat: 5:30 AM – 10:30 PM<br />
               Sunday: Closed

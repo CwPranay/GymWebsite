@@ -11,7 +11,7 @@ const PersonalTraining = () => {
             PERSONAL TRAINING
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-heading italic text-red-600 mb-6 leading-tight">
             Expert Coaching <br /> Built Around You
           </h2>
 

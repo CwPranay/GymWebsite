@@ -39,7 +39,7 @@ const PlansSection = () => {
           <p className="tracking-widest text-sm text-neutral-500 mb-3">
             MEMBERSHIP PLANS
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading italic mb-4">
             Clear Pricing. Simple Choices.
           </h2>
           <p className="text-neutral-600">
@@ -71,7 +71,7 @@ const PlansSection = () => {
                   </span>
                 )}
 
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-heading italic mb-2">
                   {plan.title}
                 </h3>
 
