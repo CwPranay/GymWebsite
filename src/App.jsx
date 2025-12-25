@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Plans from "./pages/plans/plans";
 import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact"
+import PersonalTraining from "./pages/personalTraining/PersonalTraining";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/plans" element={<Plans />} />
         <Route path="/services" element={<Services/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/personalTraining" element={<PersonalTraining/>}/>
         
       </Routes>
     </>
