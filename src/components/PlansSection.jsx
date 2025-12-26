@@ -39,7 +39,7 @@ const PlansSection = () => {
           <p className="tracking-widest text-sm text-neutral-500 mb-3">
             MEMBERSHIP PLANS
           </p>
-          <h2 className="text-4xl md:text-5xl font-heading italic mb-4">
+          <h2 className="text-4xl text-[#B11226] md:text-5xl font-heading italic mb-4">
             Clear Pricing. Simple Choices.
           </h2>
           <p className="text-neutral-600">
@@ -66,12 +66,12 @@ const PlansSection = () => {
               {/* Top Content */}
               <div>
                 {plan.highlight && (
-                  <span className="inline-block mb-4 text-xs font-semibold tracking-wide text-red-600">
+                  <span className="inline-block mb-4 text-xs font-semibold tracking-wide ">
                     MOST POPULAR
                   </span>
                 )}
 
-                <h3 className="text-xl font-heading italic mb-2">
+                <h3 className="text-xl text-[#B11226] font-heading italic mb-2">
                   {plan.title}
                 </h3>
 

@@ -13,11 +13,11 @@ const WhyChooseUs = () => {
       >
         {/* Section Header */}
         <div className="max-w-2xl mb-20">
-          <p className="text-[color:#B11226] tracking-[0.3em] text-sm font-medium mb-5">
+          <p className=" tracking-[0.3em] text-sm font-medium mb-5">
             WHY CHOOSE US
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-heading italic leading-tight">
+          <h1 className="text-4xl text-[#B11226] md:text-5xl font-heading italic leading-tight">
             Built for Consistency, <br />
             Not Quick Motivation.
           </h1>
@@ -27,10 +27,10 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-3 gap-16">
           {/* Reason 1 */}
           <div>
-            <span className="text-[color:#B11226] text-sm font-medium">
+            <span className=" text-sm font-medium">
               01
             </span>
-            <h3 className="mt-4 font-heading italic text-xl font-medium">
+            <h3 className="mt-4 text-[#B11226] font-heading italic text-xl font-medium">
               Serious Training Environment
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
@@ -41,10 +41,10 @@ const WhyChooseUs = () => {
 
           {/* Reason 2 */}
           <div>
-            <span className="text-[color:#B11226] text-sm font-medium">
+            <span className="text-sm font-medium">
               02
             </span>
-            <h3 className="mt-4 font-heading italic text-xl font-medium">
+            <h3 className="mt-4 text-[#B11226] font-heading italic text-xl font-medium">
               Guidance That Prioritizes Form
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
@@ -55,10 +55,10 @@ const WhyChooseUs = () => {
 
           {/* Reason 3 */}
           <div>
-            <span className="text-[color:#B11226] text-sm font-medium">
+            <span className=" text-sm font-medium">
               03
             </span>
-            <h3 className="mt-4 font-heading italic text-xl font-medium">
+            <h3 className="mt-4 text-[#B11226]  font-heading italic text-xl font-medium">
               Suitable for All Levels
             </h3>
             <p className="mt-4 text-gray-600 leading-relaxed">
