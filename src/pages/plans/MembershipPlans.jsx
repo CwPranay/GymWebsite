@@ -37,7 +37,7 @@ const MembershipPlans = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-heading italic mb-4">
+          <h2 className="text-3xl text-[#B11226] md:text-4xl font-heading italic mb-4">
             Membership Options
           </h2>
           <p className="text-neutral-600">

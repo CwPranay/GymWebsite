@@ -12,7 +12,7 @@ const ServicesFor = () => {
   return (
     <section className="bg-neutral-100 py-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-heading italic mb-10">
+        <h2 className="text-2xl text-[#B11226] md:text-3xl font-heading italic mb-10">
           Our Services Are Perfect For
         </h2>
 
