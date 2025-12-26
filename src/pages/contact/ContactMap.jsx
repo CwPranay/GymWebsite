@@ -6,7 +6,7 @@ const ContactMap = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-heading italic">
+          <h2 className="text-2xl text-[#B11226] md:text-3xl font-heading italic">
             Visit Our Gym
           </h2>
           <p className="text-neutral-600 mt-3">

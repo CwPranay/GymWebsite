@@ -23,7 +23,7 @@ const PTProcess = () => {
   return (
     <section className="bg-neutral-100 py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-heading italic text-center mb-14">
+        <h2 className="text-3xl text-[#B11226] font-heading italic text-center mb-14">
           How Personal Training Works
         </h2>
 
