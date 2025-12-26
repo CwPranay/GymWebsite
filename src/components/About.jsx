@@ -13,11 +13,11 @@ const AboutSection = () => {
       >
         {/* LEFT: Content */}
         <div>
-          <p className="text-[color:#B11226] tracking-[0.3em] text-sm font-medium mb-5">
+          <p className=" tracking-[0.3em] text-sm font-medium mb-5">
             ABOUT US
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-heading italic leading-tight">
+          <h1 className="text-4xl text-[#B11226] md:text-5xl font-heading italic leading-tight">
             More Than a Gym. <br />
             A Place to Train with Purpose.
           </h1>
