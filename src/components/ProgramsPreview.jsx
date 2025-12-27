@@ -124,7 +124,7 @@ const ProgramsPreview = () => {
                 hover:border-red-500/50 transition
               "
             >
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-heading italic mb-3">
                 {program.title}
               </h3>
               <p className="text-gray-300 mb-6 text-sm leading-relaxed">

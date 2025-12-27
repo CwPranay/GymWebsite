@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
 
             <p className="text-sm">
-              <span className="text-white font-semibold">Timings:</span><br />
+              <span className="text-white  font-heading italic">Timings:</span><br />
               Mon – Sat: 5:30 AM – 10:30 PM<br />
               Sunday: Closed
             </p>
