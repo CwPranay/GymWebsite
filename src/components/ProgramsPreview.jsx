@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const programs = [
   {
@@ -19,7 +20,7 @@ const programs = [
   {
     title: "Personal Training",
     desc: "1-on-1 coaching for serious transformation.",
-    link: "/personal-training",
+    link: "/personalTraining",
   },
   {
     title: "Swimming Pool",
@@ -130,24 +131,24 @@ const ProgramsPreview = () => {
               <p className="text-gray-300 mb-6 text-sm leading-relaxed">
                 {program.desc}
               </p>
-              <a
-                href={program.link}
+              <NavLink
+                to={program.link}
                 className="text-sm font-semibold text-red-400 hover:text-red-300"
               >
                 View Details →
-              </a>
+              </NavLink>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="mt-12">
-          <a
-            href="/services"
+          <NavLink
+            to="/services"
             className="inline-block text-sm font-semibold text-white border border-white/30 px-6 py-3 rounded-full hover:border-red-500 transition"
           >
             Explore All Programs
-          </a>
+          </NavLink>
         </div>
 
       </div>
