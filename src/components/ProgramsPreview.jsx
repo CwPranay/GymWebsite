@@ -4,17 +4,17 @@ const programs = [
   {
     title: "Strength Training",
     desc: "Progressive workouts focused on building real strength.",
-    link: "/programs",
+    link: "/services",
   },
   {
     title: "Fat Loss",
     desc: "Structured training to burn fat and improve endurance.",
-    link: "/programs",
+    link: "/services",
   },
   {
     title: "Zumba Fitness",
     desc: "High-energy group sessions that make cardio enjoyable.",
-    link: "/group-classes",
+    link: "/services",
   },
   {
     title: "Personal Training",
@@ -24,7 +24,7 @@ const programs = [
   {
     title: "Swimming Pool",
     desc: "Low-impact full-body workouts and recovery sessions.",
-    link: "/facilities",
+    link: "/services",
   },
 ];
 
@@ -143,7 +143,7 @@ const ProgramsPreview = () => {
         {/* CTA */}
         <div className="mt-12">
           <a
-            href="/programs"
+            href="/services"
             className="inline-block text-sm font-semibold text-white border border-white/30 px-6 py-3 rounded-full hover:border-red-500 transition"
           >
             Explore All Programs
