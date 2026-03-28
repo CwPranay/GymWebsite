@@ -1,130 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# GymWebsite 💪
+## Getting Started
 
-A modern, responsive **single-page gym website** built with **React and Vite**, focused on performance, clean UI, and mobile-first design.  
-This project serves as a **frontend marketing site** for a gym, showcasing services, membership plans, personal training programs, and contact details.
-
----
-
-## 🚀 Features
-
-- ⚡ Fast development with **React + Vite**
-- 📱 Fully responsive layout (mobile, tablet, desktop)
-- 🧭 Reusable components (Navbar, Hero, Plans, Testimonials, Contact)
-- 🎯 Clear sectioned pages:
-  - Home
-  - Services
-  - Membership Plans
-  - Personal Training
-  - Contact
-- 🎨 Utility-first styling approach (Tailwind-style setup)
-
----
-
-## 🛠 Tech Stack
-
-- **React**
-- **Vite**
-- **JavaScript (ES6+)**
-- **CSS / Tailwind-style utilities**
-- **ESLint** for code quality
-
----
-
-## 📂 Project Structure
-
-```
-
-├── public/            # Static assets (images, fonts)
-├── src/
-│   ├── components/    # Reusable UI components
-│   ├── pages/         # Page-level sections
-│   ├── assets/        # Images and media
-│   └── main.jsx       # App entry point
-├── index.html
-├── package.json
-└── vite.config.js
-
-````
-
----
-
-## ⚙️ Getting Started
-
-### Prerequisites
-- Node.js **v16+** (recommended: v18+)
-- npm or yarn
-
-### Installation
-
-```bash
-npm install
-````
-
-### Run Development Server
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Build for Production
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-npm run build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Preview Production Build
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-npm run preview
-```
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## 📜 Available Scripts
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-* `npm run dev` – Start development server
-* `npm run build` – Create production build
-* `npm run preview` – Preview production build locally
-* `npm run lint` – Run ESLint checks
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 🌍 Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This project can be deployed on **Vercel**, **Netlify**, or **GitHub Pages**.
-
-**Vercel setup:**
-
-* Build command: `npm run build`
-* Output directory: `dist`
-
----
-
-## 🧠 Future Improvements
-
-* Add form validation to Contact page
-* Integrate backend or email service
-* Add animations (Framer Motion)
-* Improve accessibility (ARIA labels)
-* SEO optimization
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Run lint checks
-5. Open a pull request with a clear description
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
